@@ -1,0 +1,7 @@
+TABELA ASCII
+
+    CARACTERE(!, , /, 3, A, [, ', _, b) -> Nessa ordem
+    NUMERO (1, 0, 4, 8, 20506)
+    BINÁRIO (1000 0101, 1010 0100)
+        ver direito! cada um tem seus respectivos: https://www.ime.usp.br/~kellyrb/mac2166_2015/tabela_ascii.html
+

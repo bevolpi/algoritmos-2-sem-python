@@ -1,0 +1,3 @@
+tupla é imutável!! não se pode mudar as coisas dentro dela, só pode adicionar
+
+empacotamento nomeado (**kwargs) -> como parâmetro
