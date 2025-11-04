@@ -53,6 +53,7 @@ def calcularMedia(distancia):
 
 def main():
     lista = gerar_pontos()
+    print(f"Lista de coordenadas: {lista}")
     distancia = calcular_distancia(lista)
     for i in range(len(lista)):
         print(f" {lista[i]} --> {distancia[i]:.2f}")
