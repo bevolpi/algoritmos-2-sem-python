@@ -5,3 +5,45 @@ TABELA ASCII
     BINÁRIO (1000 0101, 1010 0100)
         ver direito! cada um tem seus respectivos: https://www.ime.usp.br/~kellyrb/mac2166_2015/tabela_ascii.html
 
+“type(s)” - tipo 
+    type(5) retorna <class 'int'>.
+    type("olá") retorna <class 'str'>
+
+“s1 = s.replace(“mundo”, “abacate”) - substitui 
+
+“s.startswith(“Olá”) OU s.endswith(“Olá”)” - str s começa ou termina com “Olá” 
+
+“s1.count(“Olá)” - qnts ocorrências da palavra “Olá” a s1 possui 
+
+“s.capitalize()” – 1° letra maiúscula
+"a = input('Informe uma palavra: ').lower()" - transforma input p tudo minúscula
+
+“s.isdigit()”-se só tem n° 
+“s.isalnum()” -se só tem letra e n° 
+“s.isalpha()” -se só tem letra 
+"s.islower() - se é minúscula
+
+“s = “Olá” 
+    print(s[0])” == O 
+    print(s[-1]) == á 
+    print(s[0:3] OU s[:3]) == Ol --> (o i=3 é omitido) 
+
+    print(s[::2]) -só pares 
+    print(s[1::2]) -só ímpares 
+    s[::-1] == álO -inverte 
+
+    print(“A”, “B”, “C”) == “A B C” 
+    print(“A” + “B” + “C”) == “ABC” 
+
+s = “Oi {0} Bom {1} Dia {2}”.format(3,4,12) 
+    print(s) == “Oi 3 Bom 4 Dia 12” 
+
+n = “Python” 
+    print(f”Qual o melhor? {n.upper() + “!” * 3}”) == “Qual o melhor? PYTHON!!! 
+
+print("Admirável", "Mundo", "Novo") == Admirável Mundo Novo
+print("Admirável"+ "Mundo" + "Novo") == AdmirávelMundoNovo
+
+\n quebra!
+
+
