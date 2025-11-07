@@ -320,3 +320,14 @@ def excluirTelefone(nome, telefone):
 def consultarTelefone(nome):
     if nome in dicio:
         return dicio[nome]
+    
+    
+    
+titulos = ["O Senhor dos Anéis", "Harry Potter", "", "A Revolução dos Bichos", ""]
+linhas = titulos.split("\n")   # divide em linhas
+lista_titulos = []             # lista final
+
+for t in linhas:
+    titulo_limpo = t.strip()   # remove espaços extras
+    if titulo_limpo:           # só adiciona se não for vazio
+        lista_titulos.append(titulo_limpo)
