@@ -1,0 +1,39 @@
+from random import randint
+import util
+import time
+
+
+def medir_tempo(algoritmo, lista:list) -> float:
+    lista_aux = lista.copy()
+    inicio = time.perf_counter()
+    algoritmo(lista_aux)
+    fim = time.perf_counter()
+    return(fim-inicio) * 1000
+
+def gerar_lista(n:int) -> list:
+    lista = []
+    for _ in range(n):
+        lista.append(randint(1, n ** 2))
+    return lista
+
+
+def main():
+    tamanho = [100,1000,10000]
+    print("Comparação entre os métodos de ordenação")
+    print()
+    for n in tamanho:
+        print(f"Lista de tamanho {n}: ")
+        lista = gerar_lista(n)
+        tempo_bolha = medir_tempo(util.bubble_sort, lista)
+        tempo_selecao = medir_tempo(util.selection_sort, lista)
+        tempo_insercao = medir_tempo(util.insertion_sort, lista)
+        tempo_quicksort = medir_tempo(util.quick_sort, lista)
+        
+        print(f'Tempo bolha {tempo_bolha:.3f}')
+        print(f'Tempo seleção {tempo_selecao:.3f}') 
+        print(f'Tempo inserção {tempo_insercao:.3f}')
+        print(f'Tempo rápido {tempo_quicksort:.3f}')
+        print('-' * 40)
+
+if __name__ == '__main__':
+    main()
