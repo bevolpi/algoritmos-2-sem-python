@@ -35,10 +35,40 @@ def busca_binaria(lista: list[int], valor):
             fim = meio - 1
     return -1
 
+
+def busca_linear_recursiva(lista: list[int], valor: int, indice: int = 0) -> int:
+    """
+    Realiza a busca linear recursiva de um valor em uma lista.
+
+    Args:
+        lista (list[int]): A lista onde a busca será realizada.
+        valor (int): O valor a ser procurado.
+        indice (int): O índice atual da lista a ser verificado (inicia em 0).
+
+    Returns:
+        int: O índice do valor se encontrado, ou -1 caso contrário.
+    """
+    
+    # 1. Caso Base 1: Valor Não Encontrado (Limite da Lista)
+    # Se o índice atual for igual ou maior que o tamanho da lista, 
+    # significa que todos os elementos foram verificados sem sucesso.
+    if indice >= len(lista):
+        return -1
+
+    # 2. Caso Base 2: Valor Encontrado
+    # Se o elemento no índice atual for o valor procurado.
+    if lista[indice] == valor:
+        return indice
+
+    # 3. Passo Recursivo:
+    # Se o valor não foi encontrado neste índice, chama a função novamente 
+    # para verificar o próximo elemento (incrementando o índice).
+    return busca_linear_recursiva(lista, valor, indice + 1)
 #------------------------------------------------------------------------------------------------
 # função para ordenar uma lista de números inteiros em ordem crescente usando o método bolha (bubblesort)
 # https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html
 #percorre toda a lista todas as vezes (se o i0 > i1 troca, se i0>i2 troca.... assim com todos)
+#troca se o em seguida for menor
 def bolha(lista: list[int]) -> list[int]:
     for j in range(len(lista)):
         for i in range(len(lista) - 1):
@@ -49,6 +79,7 @@ def bolha(lista: list[int]) -> list[int]:
 #-----------------------------------------------------------------------------------------------
 # função para ordenar uma lista pelo método da seleção
 #ve se o i0 >ifinal, se for, troca e "descarta" o menor, dps, ve se o i1> ifinal...) 
+#ve o menor da lista e coloca primeiro, ve o segundo menor e coloca em segundo....
 def selecao(x):
     n = len(x)
     for i in range(n - 1):
@@ -60,9 +91,11 @@ def selecao(x):
         # Troca os elementos (essa linha precisa estar dentro do laço externo)
         x[i], x[menor] = x[menor], x[i]
 
+
 #---------------------------------------------------------------------------------------------
 # função para ordenar uma lista pelo método de inserção
 #2 variáveis, se for menor, joga o número p outra váriavel
+#esse é menor que o anterior? ele empurra o menor p frente -> [5,6,3,2,7,1] -> [3,5,6,2,7,1]
 def insercao(x):
     n = len(x)
     for j in range(1, n):
@@ -101,6 +134,7 @@ def particionar(lista, inicio, fim) -> int:  # retorna o índice do pivô
 
 #--------------------------------------------------------------------
 # algoritmo de ordenação mergesort
+#divide tudinho e ve se a esq é maior que a direita
 
 def mergesort(lista):
     if len(lista) <= 1:
